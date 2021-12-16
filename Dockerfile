@@ -28,5 +28,6 @@ RUN apk add --no-cache mariadb-dev \
 
 EXPOSE 80
 RUN chmod +x ${APP_HOME}
+RUN chmod +x docker-entrypoint.sh
 
 CMD ./docker-entrypoint.sh
