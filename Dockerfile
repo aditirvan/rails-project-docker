@@ -25,7 +25,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN apk add --no-cache mariadb-dev \
     && mkdir -p tmp/pids/ \
-    && chmod 775 ${APP_HOME}
+    && chmod -R 775 ${APP_HOME}
 
 EXPOSE 80
 
