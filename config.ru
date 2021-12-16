@@ -4,3 +4,7 @@ require_relative "config/environment"
 
 run Rails.application
 Rails.application.load_server
+
+map '/rails-docker' do
+    run Rails.application
+end
