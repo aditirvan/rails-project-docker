@@ -15,6 +15,9 @@ RUN mkdir .bundle \
 
 FROM aditirvan/phusion-passenger-nginx:2.7.4-alpine
 ENV APP_HOME="/usr/src/app"
+ENV REDIS_DB=0 \
+    REDIS_URL=redis://redis \
+    REDIS_PORT=6379
 WORKDIR ${APP_HOME}
 
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
