@@ -24,10 +24,9 @@ COPY . .
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN apk add --no-cache mariadb-dev \
-    && mkdir -p tmp/pids/
+    && mkdir -p tmp/pids/ \
+    && chmod 775 ${APP_HOME}
 
 EXPOSE 80
-RUN chmod +x ${APP_HOME}
-RUN chmod +x docker-entrypoint.sh
 
 CMD ./docker-entrypoint.sh
