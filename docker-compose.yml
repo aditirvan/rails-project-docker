@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rails:
+    build: .
+    ports:
+      - 8080:80
+    networks:
+      - rails-network
+    
+networks:
+  rails-network:
